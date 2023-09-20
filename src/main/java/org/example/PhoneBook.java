@@ -32,6 +32,6 @@ public class PhoneBook {
 
     // Вывод всех имён в алфавитном порядке
     public void printAllNames() {
-        System.out.println("0");
+        phones.keySet().stream().sorted().forEach(System.out::println);
     }
 }

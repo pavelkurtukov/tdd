@@ -67,7 +67,7 @@ class PhoneBookTest {
 
         phoneBook.printAllNames();
 
-        assertEquals("Аашкин Иван\nБаранов Никита\nШахматов Сергей", outputStreamCaptor.toString().trim());
+        assertEquals("Аашкин Иван\r\nБаранов Никита\r\nШахматов Сергей", outputStreamCaptor.toString().trim());
 
         System.setOut(standardOut);
     }

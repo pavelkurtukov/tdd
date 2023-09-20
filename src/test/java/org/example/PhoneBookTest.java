@@ -19,6 +19,15 @@ class PhoneBookTest {
     }
 
     @Test
+    @DisplayName("Тест поиска номера телефона по имени")
+    void findByName() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Иванов Иван", 79998887755l);
+
+        Assertions.assertEquals(79998887755l, phoneBook.findByName("Иванов Иван"));
+    }
+
+    @Test
     @DisplayName("Тест запрета добавлять повторяющиеся имена")
     void addDuplicate() {
         PhoneBook phoneBook = new PhoneBook();

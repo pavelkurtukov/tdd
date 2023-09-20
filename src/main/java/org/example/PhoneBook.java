@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class PhoneBook {
     Map<String, Long> phones;
@@ -23,6 +24,9 @@ public class PhoneBook {
 
     // Поиск имени по телефону
     public String findByNumber(long number) {
+        for (Map.Entry<String, Long> map : phones.entrySet()) {
+            if (map.getValue() == number) return map.getKey();
+        }
         return "";
     }
 }

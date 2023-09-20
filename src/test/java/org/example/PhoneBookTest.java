@@ -38,4 +38,13 @@ class PhoneBookTest {
         Assertions.assertEquals(1, actualValue);
         Assertions.assertEquals(79998887766l, phoneBook.findByName("Иванов Иван"));
     }
+
+    @Test
+    @DisplayName("Тест поиска имени по номеру телефона")
+    void findByNumber() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Иванов Иван", 79998887755l);
+
+        assertEquals("Иванов Иван", phoneBook.findByNumber(79998887755l));
+    }
 }

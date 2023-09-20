@@ -20,4 +20,9 @@ public class PhoneBook {
     public long findByName(String name) {
         return phones.get(name).longValue();
     }
+
+    // Поиск имени по телефону
+    public String findByNumber(long number) {
+        return "";
+    }
 }

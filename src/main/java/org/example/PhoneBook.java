@@ -18,6 +18,6 @@ public class PhoneBook {
 
     // Поиск телефона по имени
     public long findByName(String name) {
-        return 0;
+        return phones.get(name).longValue();
     }
 }

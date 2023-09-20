@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PhoneBookTest {
@@ -46,5 +49,26 @@ class PhoneBookTest {
         phoneBook.add("Иванов Иван", 79998887755l);
 
         assertEquals("Иванов Иван", phoneBook.findByNumber(79998887755l));
+    }
+
+    @Test
+    @DisplayName("Тест вывода имён в алфавитном порядке")
+    void printAllNames() {
+        PhoneBook phoneBook = new PhoneBook();
+        int actualValue;
+        phoneBook.add("Аашкин Иван", 1111111111l);
+        phoneBook.add("Шахматов Сергей", 2222222222l);
+        phoneBook.add("Баранов Никита", 3333333333l);
+
+        PrintStream standardOut = System.out;
+        ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
+
+        System.setOut(new PrintStream(outputStreamCaptor));
+
+        phoneBook.printAllNames();
+
+        assertEquals("Аашкин Иван\nБаранов Никита\nШахматов Сергей", outputStreamCaptor.toString().trim());
+
+        System.setOut(standardOut);
     }
 }

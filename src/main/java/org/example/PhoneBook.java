@@ -29,4 +29,9 @@ public class PhoneBook {
         }
         return "";
     }
+
+    // Вывод всех имён в алфавитном порядке
+    public void printAllNames() {
+        System.out.println("0");
+    }
 }
